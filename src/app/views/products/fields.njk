@@ -14,50 +14,48 @@
 <div class="item">
   <div>Nome</div>
   <div>
-    <input type="text" name="name" placeholder="Nome do produto" value="{{product.name}}">
+    <input type="text" name="name" placeholder="Digite o título do anúncio" value="{{ product.name }}">
   </div>
-</div>
-
-<div class="item">
-  <div>Descrição</div>
-  <div>
-    <textarea name="description" id="" cols="30" rows="10">
-      {{product.description}}
-    </textarea>
-  </div>
-</div>
-
-{# campo de foto #}
-
-<div class="item">
-  <div>Valor</div>
-  <div>
-    <input type="text" name="price" placeholder="Preço do produto" value="{{product.price}}" {# Mascara de dinherio #}>
-  </div>
-  {% if product.old_price %}
-    <input type="hidden" name='old_price' value='{{product.old_price}}'>
-  {% endif %}
-</div>
-
-<div class="item">
-  <div>Quantidade</div>
-  <div>
-    <input type="number" name="quantity" placeholder="Estoque disponível" value="{{product.quantity}}">
-  </div>
-</div>
-
-{% if product.status%}
   <div class="item">
-    <div>Disponível</div>
+    <div>Descrição</div>
     <div>
-      <span>
-        <input type="radio" name="status" value="1" {% if product.status == '1' %} checked="checked" {% endif %}>
-        Sim
-      </span>
-      <span>
-        <input type="radio" name="status" value="0" {% if if product.status == '0'  %} checked="checked" {% endif %}>
-        Não
-      </span>
+      <textarea name="description" id="" cols="30" rows="10">
+        {{product.description}}
+      </textarea>
     </div>
   </div>
-{% endif %}
+
+  {# campo de foto #}
+
+  <div class="item">
+    <div>Valor</div>
+    <div>
+      <input type="text" name="price" placeholder="Preço do produto" value="{{product.price}}" {# Mascara de dinherio #}>
+    </div>
+    {% if product.old_price %}
+      <input type="hidden" name='old_price' value='{{product.old_price}}'>
+    {% endif %}
+  </div>
+
+  <div class="item">
+    <div>Quantidade</div>
+    <div>
+      <input type="number" name="quantity" placeholder="Estoque disponível" value="{{product.quantity}}">
+    </div>
+  </div>
+
+  {% if product.status%}
+    <div class="item">
+      <div>Disponível</div>
+      <div>
+        <span>
+          <input type="radio" name="status" value="1" {% if product.status == '1' %} checked="checked" {% endif %}>
+          Sim
+        </span>
+        <span>
+          <input type="radio" name="status" value="0" {% if product.status == '0'  %} checked="checked" {% endif %}>
+          Não
+        </span>
+      </div>
+    </div>
+  {% endif %}
