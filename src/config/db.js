@@ -1,9 +1,5 @@
 const { Pool } = require("pg");
 
 module.exports = new Pool({
-  user: "postgres",
-  password: "3558",
-  host: "localhost",
-  port: 5432,
-  database: "launchstoredb",
+  connectionString: 'postgres://voiisjkd:aPwNFb89E2QTtjpQdvLj4SI46RPQb8D7@ruby.db.elephantsql.com:5432/voiisjkd'
 });
